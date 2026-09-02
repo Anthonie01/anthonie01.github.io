@@ -89,3 +89,10 @@ li a:hover {
   background-color: #8c87da;
   color: white;
 }
+main img{
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 20px 0 20px auto;
+}
