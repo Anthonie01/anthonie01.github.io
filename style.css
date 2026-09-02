@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  color: white;
+}
+
+.header,
+.footer {
+  flex: 0 0 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #294786;
+}
+
+.header {
+  border-bottom: 2px solid #000000;
+}
+
+.footer {
+  border-top: 2px solid #000000;
+}
+
+.header h1 {
+  margin: 0;
+  color: #38bdf8;
+}
+
+.content p {
+  line-height: 1.6;
+}
+
+.content-body {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  min-height: 0;
+}
+
+.side-nav {
+  flex: 0 0 220px;
+  background-color: #000000;
+  border-right: 2px solid #000000;
+}
+
+.nav-links {
+  flex: 0 0 200px;
+  margin: 0;
+  padding: 20px 0;
+  list-style: none;
+  background-color: #000000;
+  transition: 0.2s;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  padding: 40px;
+  overflow: auto;
+  background-color: #88aaf5;
+  text-align: left;
+  color: #e2e8f0;
+}
+
+li a {
+  display: block;
+  color: #FFFFFF;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.nav-links li a.active {
+  background-color: #0ea5e9;
+  color: white;
+}
+
+li a:hover {
+  background-color: #8c87da;
+  color: white;
+}
