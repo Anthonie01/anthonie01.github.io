@@ -101,20 +101,8 @@ main img {
 }
 
 @media (max-width: 600px) {
-  html,
-  body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
   body {
     font-size: 16px;
-  }
-
-  .container {
-    min-height: 100dvh;
-    height: auto;
   }
 
   .header,
@@ -124,7 +112,6 @@ main img {
 
   .header h1 {
     font-size: 1.4rem;
-    padding: 0 12px;
   }
 
   .content-body {
@@ -187,7 +174,7 @@ table {
 .status-in-progress::after {
   content: "Lopend";
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff81;
 }
 
 .status-passed::after {
@@ -207,10 +194,8 @@ table {
 /*This is for the progress bar in dashboard.html*/
 
 .progress-container {
-  display: flex;
-    width: 80%;
-    height: 10%;
-    margin: 20px 0;
+  margin:20px auto;
+  width: 80%;
 }
 
 .progress-info {
@@ -220,13 +205,12 @@ table {
     font-weight: bold;
 }
 
-.progress-bar {
-  display: block;
-    width: 100%;
+#progress-bar {
+  display: flex;
     height: 25px;
     background-color: #333;
-  border: 1px solid #64748b;
-    border-radius: 10px;
+  border: 2px solid #64748b;
+    border-radius: 20px;
     overflow: hidden;
 }
 
