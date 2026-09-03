@@ -17,7 +17,7 @@ body {
 
 .header,
 .footer {
-  flex: 0 0 70px;
+  flex: 0 0 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,7 +34,7 @@ body {
 
 .header h1 {
   margin: 0;
-  color: #38bdf8;
+  color: #000000; 
 }
 
 .content p {
@@ -49,13 +49,13 @@ body {
 }
 
 .side-nav {
-  flex: 0 0 220px;
+  flex: 0 0 50px;
   background-color: #000000;
   border-right: 2px solid #000000;
 }
 
 .nav-links {
-  flex: 0 0 200px;
+  flex: 0 0 50px;
   margin: 0;
   padding: 20px 0;
   list-style: none;
@@ -97,7 +97,51 @@ main img {
   height: auto;
   display: block;
   margin: 20px 0 20px auto;
+  border-radius: 15px;
 }
+
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  .header,
+  .footer {
+    flex-basis: 50px;
+  }
+
+  .header h1 {
+    font-size: 1.4rem;
+  }
+
+  .content-body {
+    flex-direction: column;
+  }
+
+  .side-nav {
+    flex: 0 0 auto;
+    border-right: 0;
+    border-bottom: 2px solid #000000;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 4px 0;
+  }
+
+  li a {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+
+  .content {
+    padding: 20px 16px;
+  }
+}
+
+/*This is mostly meant for dashboard table*/
 
 table,
 th,
@@ -109,11 +153,16 @@ th,
 td {
   padding: 5px;
   text-align: left;
+  color: rgb(28, 24, 24);
+  background-color: #8c87da;
 }
 
 .table-header {
   text-align: center;
+  color: #000000;
+  /*Overides the usual colour of td.*/
   font-family: serif, impact, fantasy;
+  background-color: #294786;
 }
 
 table {
@@ -128,16 +177,55 @@ table {
   color: #FFFFFF;
 }
 
-.status-passed ::after {
+.status-passed::after {
   content: "Geslaagd";
   text-align: center;
   font-weight: bold;
   color: #00FF00;
 }
 
-.status-failed ::after {
-  content: "Geefaald";
+.status-failed::after {
+  content: "Gefaald";
   text-align: center;
   font-weight: bold;
   color: #FF0000;
+}
+
+/*This is for the progress bar in dashboard.html*/
+
+.progress-container {
+  display: flex;
+    width: 80%;
+    height: 10%;
+    margin: 20px 0;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.progress-bar {
+  display: block;
+    width: 100%;
+    height: 25px;
+    background-color: #333;
+  border: 1px solid #64748b;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#progress-fill-in {
+  display: block;
+    width: 0%;
+    height: 100%;
+    background-color: #00ff00;
+    transition: width 0.5s ease;
+}
+
+#progress-status {
+    text-align: center;
+    font-weight: bold;
 }
