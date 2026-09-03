@@ -89,10 +89,55 @@ li a:hover {
   background-color: #8c87da;
   color: white;
 }
-main img{
+
+
+main img {
   width: 100%;
   max-width: 400px;
   height: auto;
   display: block;
   margin: 20px 0 20px auto;
+}
+
+table,
+th,
+td {
+  border: 3px solid #000000;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: left;
+}
+
+.table-header {
+  text-align: center;
+  font-family: serif, impact, fantasy;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/*🟢⚪🔴*/
+
+.status-in-progress::after {
+  content: "Lopend";
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.status-passed ::after {
+  content: "Geslaagd";
+  text-align: center;
+  font-weight: bold;
+  color: #00FF00;
+}
+
+.status-failed ::after {
+  content: "Geefaald";
+  text-align: center;
+  font-weight: bold;
+  color: #FF0000;
 }
