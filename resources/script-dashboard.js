@@ -1,3 +1,4 @@
+/*automatic replacement of class status based on grade*/
 function UpdateStatuses() {
     document.querySelectorAll("tr").forEach(row => {
         const status = row.querySelector(".status")

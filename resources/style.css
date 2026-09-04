@@ -1,3 +1,4 @@
+/*Base layout*/
 body {
   margin: 0;
   padding: 0;
@@ -34,7 +35,7 @@ body {
 
 .header h1 {
   margin: 0;
-  color: #000000; 
+  color: #000000;
 }
 
 .content p {
@@ -100,6 +101,7 @@ main img {
   border-radius: 15px;
 }
 
+/*Quick fix for layout on the phone*/
 @media (max-width: 600px) {
   body {
     font-size: 16px;
@@ -161,15 +163,13 @@ td {
   text-align: center;
   color: #000000;
   /*Overides the usual colour of td.*/
-  font-family: serif, impact, fantasy;
+  font-family: serif, impact;
   background-color: #294786;
 }
 
 table {
   border-collapse: collapse;
 }
-
-/*🟢⚪🔴*/
 
 .status-in-progress::after {
   content: "Lopend";
@@ -190,39 +190,36 @@ table {
   font-weight: bold;
   color: #FF0000;
 }
-
 /*This is for the progress bar in dashboard.html*/
-
 .progress-container {
-  margin:20px auto;
+  margin: 20px auto;
   width: 80%;
 }
 
 .progress-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-weight: bold;
 }
 
 #progress-bar {
   display: flex;
-    height: 25px;
-    background-color: #333;
+  height: 25px;
+  background-color: #333;
   border: 2px solid #64748b;
-    border-radius: 20px;
-    overflow: hidden;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 #progress-fill-in {
   display: block;
-    width: 0%;
-    height: 100%;
-    background-color: #00ff00;
-    transition: width 0.5s ease;
+  width: 0%;
+  height: 100%;
+  background-color: #00ff00;
 }
 
 #progress-status {
-    text-align: center;
-    font-weight: bold;
+  text-align: center;
+  font-weight: bold;
 }
