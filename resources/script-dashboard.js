@@ -3,7 +3,7 @@ function UpdateStatuses() {
     document.querySelectorAll("tr").forEach(row => {
         const status = row.querySelector(".status")
         const grade = row.querySelector(".grade")
-
+        const ec =row.querySelector(".ec")
         if (!status || !grade) {
             return;
         }
@@ -31,3 +31,10 @@ function UpdateStatuses() {
 window.addEventListener("DOMContentLoaded", () => {
     UpdateStatuses();
 });
+
+/*automatic change of the progress bar*/
+function UpdateStatuses() {
+
+}
+/*if  (const passed = true){
+    ec + 5*/
