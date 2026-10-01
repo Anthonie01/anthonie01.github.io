@@ -1,9 +1,9 @@
 /*automatic replacement of class status based on grade*/
-function UpdateStatuses() {
+function updateStatuses() {
     document.querySelectorAll("tr").forEach(row => {
         const status = row.querySelector(".status")
         const grade = row.querySelector(".grade")
-        const ec =row.querySelector(".ec")
+        const ec = row.querySelector(".ec")
         if (!status || !grade) {
             return;
         }
@@ -28,13 +28,53 @@ function UpdateStatuses() {
     });
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-    UpdateStatuses();
-});
+updateStatuses();
 
 /*automatic change of the progress bar*/
-function UpdateStatuses() {
 
+
+function updateBar(progress){
+    const loadingBar = document.getElementById("progress-fill-in");
+    loadingBar.style.width = `${progress}%`;
 }
-/*if  (const passed = true){
-    ec + 5*/
+
+function filtEc(number){
+    if(number >= 5.5){
+        return true;
+    }
+    return false;
+}
+/**
+ * 
+ * @returns progress. It grabs ec and grade then check if it succeeded
+ */
+function getProgress(){
+    let ecGained = 0;
+
+    document.querySelectorAll("tr").forEach(row => {
+        const ec = row.querySelector(".ec");
+        const grade = row.querySelector(".grade");
+
+        if (!ec || !grade) return;
+
+        const gradeValue = parseFloat(grade.textContent);
+        const ecValue = parseFloat(ec.textContent);
+
+        if (!isNaN(gradeValue) && filtEc(gradeValue)) {
+            ecGained += ecValue;
+        }
+    });
+
+    return ecGained
+}
+
+updateBar(getProgress() / 60 * 100);
+/**
+ * Update the progress text to show current EC in number and percentage format.
+ */
+function updateProgressText() {
+    const progressText = document.querySelector(".progress-text");
+    const ecGained = getProgress();
+    progressText.textContent = `${ecGained} / 60 EC (${Math.round(ecGained / 60 * 100)}%)`;
+}
+updateProgressText();

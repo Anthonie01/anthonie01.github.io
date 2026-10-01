@@ -190,6 +190,10 @@ table {
   font-weight: bold;
   color: #FF0000;
 }
+
+.ec, .status, .grade{
+  text-align: center;
+}
 /*This is for the progress bar in dashboard.html*/
 .progress-container {
   margin: 20px auto;
