@@ -30,27 +30,36 @@ function updateStatuses() {
 
 updateStatuses();
 
-/*automatic change of the progress bar*/
+/* These functions update the progress bar*/
 
-
-function updateBar(progress){
+/**
+ * 
+ * @param {int} progress the progress as a percentage
+ * it updates the progress bar. 
+ */
+function updateBar(progress) {
     const loadingBar = document.getElementById("progress-fill-in");
     loadingBar.style.width = `${progress}%`;
 }
 
-function filtEc(number){
-    if(number >= 5.5){
+/**
+ * 
+ * @param {int} number  
+ * @returns a passing grade
+ */
+function filtEc(number) {
+    if (number >= 5.5) {
         return true;
     }
     return false;
 }
+
 /**
  * 
  * @returns progress. It grabs ec and grade then check if it succeeded
  */
-function getProgress(){
+function getProgress() {
     let ecGained = 0;
-
     document.querySelectorAll("tr").forEach(row => {
         const ec = row.querySelector(".ec");
         const grade = row.querySelector(".grade");
@@ -69,6 +78,7 @@ function getProgress(){
 }
 
 updateBar(getProgress() / 60 * 100);
+
 /**
  * Update the progress text to show current EC in number and percentage format.
  */
